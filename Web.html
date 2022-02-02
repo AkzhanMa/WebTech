@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    Year: <p id="year"></p>
+    Today: <p id="day"></p>
+    Date: <p id="DATE"></p>
+    Month: <p id="month"></p>
+    Current time is: <p id="time"></p>
+</div>
+<script>
+    const date = new Date();
+    document.getElementById("year").innerHTML = date.getFullYear();
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day =days[date.getDay()];
+    document.getElementById("day").innerHTML = day;
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let month = months[date.getMonth()];
+    document.getElementById("DATE").innerHTML = date.getDate() +" "+ month;
+    document.getElementById("month").innerHTML =month;
+    document.getElementById("time").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+</script>
+
+
+<div>
+    <br><hr>
+    <p id="left">as</p>
+</div>
+<script>
+    const d = new Date();
+    const left = (2024 - d.getUTCFullYear()) *365;
+
+    document.getElementById("left").innerHTML = left + " days left until the freedom!";
+</script>
+
+
+<div>
+    <br><hr>
+    1st Number : <input id="tes"/>
+    <br>
+    2nd Number : <input id="tes1"/>
+    <br>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+    <br>
+    The Result is: <p id="result"></p>
+</div>
+<script>
+
+    function multiply(){
+        var num1 = Number(document.getElementById("tes").value);
+        var num2 = Number(document.getElementById("tes1").value);
+        var result = num1 * num2;
+        document.getElementById("result").innerHTML = result;
+    }
+
+    function divide(){
+        var number1 = Number(document.getElementById("tes").value);
+        var number2 = Number(document.getElementById("tes1").value);
+        var Result = number1 / number2;
+        document.getElementById("result").innerHTML = Result;
+    }
+
+
+</script>
+
+</body>
+</html>
